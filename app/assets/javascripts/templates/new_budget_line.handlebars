@@ -1,0 +1,8 @@
+{{#if view.createMode}}
+  <button class='btn btn-danger btn-mini' {{action "cancelBudgetLine" target="this"}}>Cancel</button>
+  {{view Ember.TextField valueBinding="view.name"}}
+  {{view Ember.TextField valueBinding="view.amount"}}
+  <button class='btn btn-success btn-mini' {{action "createBudgetLine" target="this"}}>Save</button>
+{{else}}
+  <button class='btn btn-primary btn-mini' {{action "newBudgetLine" target="this"}}>New Budget Line</button>
+{{/if}}

@@ -1,0 +1,13 @@
+<h1>Your Budget:
+  <span {{bindAttr class="controller.overBudget:danger"}}>
+    ${{controller.total}}
+  </span>
+  /
+  ${{controller.income}}
+</h1>
+<ul>
+  {{#each category in controller}}
+    {{view App.CategoryView categoryBinding="category"}}
+  {{/each}}
+  <li><h3>{{view App.NewCategoryView}}</h3></li>
+</ul>

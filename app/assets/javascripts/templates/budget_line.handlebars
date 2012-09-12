@@ -1,0 +1,12 @@
+<li>
+  <h4>
+    {{#if view.editMode}}
+        {{view Ember.TextField valueBinding="budgetLine.name"}}
+        {{view Ember.TextField valueBinding="budgetLine.amount"}}
+        <button class='btn btn-success btn-mini' {{action "saveBudgetLine" target="this"}}>Save</button>
+    {{else}}
+        {{budgetLine.name}} - ${{budgetLine.amount}}
+        <button class='btn btn-primary btn-mini' {{action "editBudgetLine" target="this"}}>Edit</button>
+    {{/if}}
+  </h4>
+</li>

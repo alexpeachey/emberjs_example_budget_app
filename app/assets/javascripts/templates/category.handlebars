@@ -1,0 +1,19 @@
+<li>
+  {{#if view.editMode}}
+    <h3>
+      {{view Ember.TextField valueBinding="category.name"}} - ${{category.total}}
+      <button class='btn btn-success btn-mini' {{action "saveCategory" target="this"}}>Save</button>
+    </h3>
+  {{else}}
+    <h3>
+      {{category.name}} - ${{category.total}}
+      <button class='btn btn-primary btn-mini' {{action "editCategory" target="this"}}>Edit</button>
+    </h3>
+  {{/if}}
+  <ul>
+    {{#each budgetLine in category.budgetLines}}
+      {{view App.BudgetLineView categoryBinding="category" budgetLineBinding="budgetLine"}}
+    {{/each}}
+    <li><h4>{{view App.NewBudgetLineView categoryBinding="category"}}</h4></li>
+  </ul>
+</li>

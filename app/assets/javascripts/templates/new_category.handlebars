@@ -1,0 +1,7 @@
+{{#if view.createMode}}
+  <button class='btn btn-danger btn-mini' {{action "cancelCategory" target="this"}}>Cancel</button>
+  {{view Ember.TextField valueBinding="view.name"}}
+  <button class='btn btn-success btn-mini' {{action "createCategory" target="this"}}>Save</button>
+{{else}}
+  <button class='btn btn-primary btn-mini' {{action "newCategory" target="this"}}>New Category</button>
+{{/if}}

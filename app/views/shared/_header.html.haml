@@ -1,0 +1,5 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    = link_to BRAND, root_url, class: 'brand'
+    %ul.nav.pull-right
+      %li= current_user.session_control
